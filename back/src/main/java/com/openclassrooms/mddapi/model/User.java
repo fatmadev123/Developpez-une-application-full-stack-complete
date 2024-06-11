@@ -26,7 +26,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class User {
-	 @Id
+	@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
@@ -61,4 +61,3 @@ public class User {
 	            inverseJoinColumns = @JoinColumn( name = "topic_id" ) )
 	    private List<Topic> topics;
 }
-

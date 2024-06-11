@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Topic {
-	    @Id
+		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
