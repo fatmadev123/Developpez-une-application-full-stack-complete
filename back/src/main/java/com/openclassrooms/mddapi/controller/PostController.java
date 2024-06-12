@@ -35,4 +35,24 @@ public class PostController {
         List<Post> posts = this.postService.getFeedPosts();
         return ResponseEntity.ok().body(this.postMapper.toDto(posts));
     }
+    /**
+     * Action to get a post by id
+     * @param id: post id
+     * @return ResponseEntity<PostDto>: the post
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<PostDto> getById(@PathVariable("id") String id) {
+        try {
+            Post post = this.postService.getById(Long.valueOf(id));
+
+            if (post == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            return ResponseEntity.ok().body(this.postMapper.toDto(post));
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
 }
