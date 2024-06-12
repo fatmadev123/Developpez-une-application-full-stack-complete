@@ -40,4 +40,36 @@ public class TopicController {
         List<Topic> topics = this.topicService.getFollowedTopics();
         return ResponseEntity.ok().body(this.topicMapper.toDto(topics));
     }
+    
+    /**
+     * Action to make the user follow the topic
+     * @param id: topic id
+     * @return ResponseEntity<MessageResponse>: to indicate if the subscription is successful or not
+     */
+    @PostMapping("/{id}/follow")
+    public ResponseEntity<MessageResponse> follow(@PathVariable("id") String id) {
+        try {
+            this.topicService.follow(Long.parseLong(id));
+
+            return ResponseEntity.ok(new MessageResponse("Subscription/follow successful!"));
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().body((new MessageResponse("Subscription/follow failed!")));
+        }
+    }
+
+    /**
+     * Action to make the user unfollow the topic
+     * @param id: topic id
+     * @return ResponseEntity<MessageResponse>: to indicate if the unsubscription is successful or not
+     */
+    @PostMapping("/{id}/unfollow")
+    public ResponseEntity<MessageResponse> unfollow(@PathVariable("id") String id) {
+        try {
+            this.topicService.unfollow(Long.parseLong(id));
+
+            return ResponseEntity.ok(new MessageResponse("Subscription/unfollow successful!"));
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().body((new MessageResponse("Subscription/unfolow failed!")));
+        }
+    }
 }
