@@ -55,4 +55,19 @@ public class PostController {
         }
     }
 
+    /**
+     * Action to get create a post
+     * @param createPostRequest: data that contains the post title, text and the topic id
+     * @return ResponseEntity<PostDto>: the post created
+     */
+    @PostMapping()
+    public ResponseEntity<PostDto> create(@Valid @RequestBody CreatePostRequest createPostRequest) {
+        try {
+            Post post = this.postService.create(new Post(createPostRequest.getTitle(), createPostRequest.getContent(), topicService.getById(createPostRequest.getTopicId())));
+
+            return ResponseEntity.ok().body(this.postMapper.toDto(post));
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
