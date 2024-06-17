@@ -5,3 +5,33 @@
   align-items: center;
   flex-direction: column;
 }
+
+.homepage-button-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-button-block button {
+  margin: 40px 40px;
+  width: 180px;
+  font-size: large;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .homepage-button-block {
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+  }
+
+  .homepage-button-block button {
+    margin: 20px;
+  }
+
+  img {
+    width: 280px;
+  }
+}

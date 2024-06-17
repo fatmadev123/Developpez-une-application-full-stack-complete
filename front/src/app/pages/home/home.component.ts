@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private sessionService: SessionService, private router: Router) {}
 
   ngOnInit(): void {}
 
-  start() {
-    alert('Commencez par lire le README et à vous de jouer !');
+  public goToRegister(): void {
+    this.sessionService.logOut();
+    this.router.navigate(['/register']);
   }
 }
