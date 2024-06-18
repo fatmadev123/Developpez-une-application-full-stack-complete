@@ -14,6 +14,9 @@ import { BackArrowLinkComponent } from './pages/shared/back-arrow-link/back-arro
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { UserComponent } from './pages/user/user.component';
+import { NavbarHeaderComponent } from './pages/shared/navbar-header/navbar-header.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     RegisterComponent,
     LoginNavbarComponent,
     BackArrowLinkComponent,
+    UserComponent,
+    NavbarHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     MatToolbarModule,
     MatIconModule,
     FormsModule,
+    MatCardModule,
     ReactiveFormsModule,
   ],
   providers: [

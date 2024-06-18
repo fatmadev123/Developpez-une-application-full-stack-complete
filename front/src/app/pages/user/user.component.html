@@ -1,0 +1,86 @@
+<app-navbar-header></app-navbar-header>
+
+<div class="cards">
+  <div class="edit-block">
+    <div class="edit-form">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div><h1>Profil d'utilisateur</h1></div>
+
+        <div class="name-block">
+          <div><label>Nom d'utilisateur</label></div>
+          <div>
+            <input
+              matInput
+              [type]="'text'"
+              formControlName="name"
+              value="{{ user?.userName }}"
+            />
+          </div>
+        </div>
+
+        <div class="email-block">
+          <div><label>E-mail</label></div>
+          <div>
+            <input
+              matInput
+              [type]="'text'"
+              formControlName="email"
+              value="{{ user?.email }}"
+            />
+          </div>
+        </div>
+
+        <div class="password-block">
+          <div><label>Mot de passe</label></div>
+          <div>
+            <input matInput [type]="'password'" formControlName="password" />
+          </div>
+        </div>
+
+        <div class="button-block">
+          <div class="save-button">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              Sauvegarder
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="logout-button">
+      <button (click)="logOut()">Se déconnecter</button>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="user-sub-title"><h1>Abonnements</h1></div>
+
+<div class="topic-cards">
+  <div class="topic" *ngFor="let topic of topics">
+    <div>
+      <mat-card>
+        <mat-card-title> {{ topic.name }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ topic.description }}</p>
+        </mat-card-content>
+        <div class="topic-unfollow-button">
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+            (click)="unfollow(topic.id)"
+          >
+            Se désabonner
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
