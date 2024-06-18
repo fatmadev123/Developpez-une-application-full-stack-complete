@@ -17,7 +17,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { UserComponent } from './pages/user/user.component';
 import { NavbarHeaderComponent } from './pages/shared/navbar-header/navbar-header.component';
 import { MatCardModule } from '@angular/material/card';
-import { TopicComponent } from './pages/shared/topic/topic.component';
+import { TopicComponent } from './pages/topic/topic.component';
 
 @NgModule({
   declarations: [
