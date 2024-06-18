@@ -1,1 +1,42 @@
-<p>register works!</p>
+<div class="login-navbar">
+  <app-login-navbar></app-login-navbar>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <app-back-arrow-link [linkToBack]="linkToBack"></app-back-arrow-link>
+    <div class="image-block">
+      <img src="../../../assets/logo_p6.png" />
+    </div>
+  </div>
+  <div class="register-form">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div><h1>Inscription</h1></div>
+      <div class="name-block">
+        <div><label>Nom d'utilisateur</label></div>
+        <div><input matInput [type]="'text'" formControlName="userName" /></div>
+      </div>
+      <div class="email-block">
+        <div><label>E-mail</label></div>
+        <div><input matInput [type]="'text'" formControlName="email" /></div>
+      </div>
+      <div class="password-block">
+        <div><label>Mot de passe</label></div>
+        <div>
+          <input matInput [type]="'password'" formControlName="password" />
+        </div>
+      </div>
+      <div class="button-block">
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          [disabled]="form.invalid"
+        >
+          S'inscrire
+        </button>
+      </div>
+      <p *ngIf="onError">Erreur de saisie ou e-mail déjà existant</p>
+    </form>
+  </div>
+</div>

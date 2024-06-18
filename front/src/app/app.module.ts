@@ -12,6 +12,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginNavbarComponent } from './pages/shared/login-navbar/login-navbar.component';
 import { BackArrowLinkComponent } from './pages/shared/back-arrow-link/back-arrow-link.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
