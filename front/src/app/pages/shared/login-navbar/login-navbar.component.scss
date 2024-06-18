@@ -1,0 +1,23 @@
+@media screen and (min-width: 768px) {
+  .mat-toolbar {
+    background-color: white;
+    border: 1px solid black;
+    padding: 45px;
+  }
+
+  .mat-toolbar img {
+    width: 180px;
+    padding-top: 5px;
+    margin-left: -35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mat-toolbar {
+    display: none;
+  }
+
+  .mat-toolbar img {
+    display: none;
+  }
+}

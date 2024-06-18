@@ -1,0 +1,72 @@
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-block {
+    display: none;
+  }
+
+  .login-form {
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-block {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-form {
+    min-height: 0vh;
+  }
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-block {
+  margin-top: 40px;
+}
+
+.password-block {
+  margin-top: 20px;
+}
+
+.button-block {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border-radius: 8px;
+  width: 250px;
+  height: 35px;
+  font-size: large;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  height: 35px;
+  width: 140px;
+}
+
+img {
+  width: 15rem;
+}
