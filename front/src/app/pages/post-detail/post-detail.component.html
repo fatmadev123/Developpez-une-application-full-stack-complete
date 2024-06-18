@@ -1,0 +1,71 @@
+<app-navbar-header></app-navbar-header>
+
+<div class="arrow-post-block">
+  <div class="arrow-block">
+    <app-back-arrow-link [linkToBack]="linkToBack"></app-back-arrow-link>
+  </div>
+
+  <div class="post">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title [routerLink]="['/post', post?.id]">
+        <div class="arrow-in-title">
+          <app-back-arrow-link [linkToBack]="linkToBack"></app-back-arrow-link>
+        </div>
+        {{ post?.title }}</mat-card-title
+      >
+      <div class="date-author-block">
+        <mat-card-subtitle>
+          <div class="date">
+            {{ post?.date | date : "dd/MM/YYYY  hh:mm" }}
+          </div>
+          <div class="author">{{ post?.userName }}</div>
+          <div class="topic">{{ post?.topicName }}</div>
+        </mat-card-subtitle>
+      </div>
+      <mat-card-content>
+        <p>{{ post?.content }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="comment-title">
+  <h2>Commentaires</h2>
+</div>
+
+<div class="comment-area">
+  <div class="comment-block" *ngFor="let comment of comments">
+    <div class="comment-user">
+      <p>{{ comment.userName }}</p>
+    </div>
+    <div class="comment">
+      <mat-card>
+        <mat-card-content>
+          <p>{{ comment.comment }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="comment-user-mobile">
+      <p>{{ comment.userName }}</p>
+    </div>
+  </div>
+
+  <div class="create-comment-block">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="comment-textarea">
+        <textarea
+          matInput
+          formControlName="comment"
+          placeholder="Ecrivez ici votre commentaire"
+        ></textarea>
+      </div>
+      <div class="comment-send-button">
+        <button mat-raised-button class="mat-elevation-z0" type="submit">
+          <fa-icon [icon]="faPaperPlaneIcon"></fa-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

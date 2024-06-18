@@ -1,0 +1,155 @@
+@media (min-width: 768px) {
+  .topic {
+    display: inline-block;
+    margin-left: 50px;
+  }
+
+  .arrow-in-title {
+    display: none;
+  }
+
+  .arrow-post-block {
+    display: inline-flex;
+  }
+
+  .comment-title {
+    margin-left: 85px;
+    margin-top: 15px;
+  }
+
+  .comment-user-mobile {
+    display: none;
+  }
+
+  .comment-area {
+    margin-left: 100px;
+  }
+
+  .comment-textarea {
+    display: inline-block;
+  }
+
+  .comment-send-button {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-left: 30px;
+  }
+
+  .comment-textarea {
+    width: 79%;
+  }
+
+  .comment-textarea textarea {
+    width: 99%;
+  }
+
+  mat-card {
+    margin-right: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topic {
+    margin-left: 0;
+  }
+
+  .arrow-block {
+    display: none;
+  }
+
+  mat-card-title {
+    display: flex;
+  }
+
+  .arrow-in-title {
+    margin-top: -14px;
+    margin-left: -15px;
+  }
+
+  .comment-title {
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .comment-block {
+    margin-left: 15px;
+  }
+
+  .comment-user {
+    display: none;
+  }
+
+  .comment-user-mobile p {
+    float: right;
+  }
+
+  .comment-textarea {
+    width: 98%;
+    margin-left: 15px;
+  }
+
+  .comment-textarea textarea {
+    width: 98%;
+  }
+
+  .comment-send-button {
+    position: absolute;
+    top: 55%;
+    left: 80%;
+  }
+}
+
+.post {
+  margin-top: 10px;
+}
+
+.date {
+  display: inline-block;
+}
+
+.author {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.line {
+  width: 88%;
+  height: 1px;
+  background: black;
+  margin: auto;
+}
+
+.comment-textarea textarea {
+  border-radius: 8px;
+  min-height: 150px;
+  margin-top: 30px;
+}
+
+.comment mat-card {
+  min-height: 100px;
+  background-color: lightgray;
+}
+
+.comment-block {
+  margin-top: 30px;
+}
+
+.comment-area {
+  margin-right: 15px;
+  margin-top: 30px;
+}
+
+fa-icon {
+  font-size: 40px;
+}
+
+.comment-send-button button {
+  width: 40px;
+  height: 40px;
+  color: #7550ec;
+}
+
+.create-comment-block {
+  position: relative;
+}

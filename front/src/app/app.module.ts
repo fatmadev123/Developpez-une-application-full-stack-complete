@@ -19,6 +19,8 @@ import { NavbarHeaderComponent } from './pages/shared/navbar-header/navbar-heade
 import { MatCardModule } from '@angular/material/card';
 import { TopicComponent } from './pages/topic/topic.component';
 import { PostComponent } from './pages/post/post.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { PostComponent } from './pages/post/post.component';
     NavbarHeaderComponent,
     TopicComponent,
     PostComponent,
+    PostDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { PostComponent } from './pages/post/post.component';
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
