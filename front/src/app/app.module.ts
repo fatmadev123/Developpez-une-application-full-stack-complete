@@ -18,6 +18,7 @@ import { UserComponent } from './pages/user/user.component';
 import { NavbarHeaderComponent } from './pages/shared/navbar-header/navbar-header.component';
 import { MatCardModule } from '@angular/material/card';
 import { TopicComponent } from './pages/topic/topic.component';
+import { PostComponent } from './pages/post/post.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TopicComponent } from './pages/topic/topic.component';
     UserComponent,
     NavbarHeaderComponent,
     TopicComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
