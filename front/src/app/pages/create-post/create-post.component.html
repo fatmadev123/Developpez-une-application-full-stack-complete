@@ -1,0 +1,50 @@
+<app-navbar-header></app-navbar-header>
+
+<div class="cards">
+  <div class="card">
+    <app-back-arrow-link [linkToBack]="linkToBack"></app-back-arrow-link>
+  </div>
+  <div class="create-post-form">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="create-title"><h1>Créer un nouvel article</h1></div>
+      <div class="select-block">
+        <mat-select
+          placeholder="Sélectionner un thème"
+          formControlName="topicId"
+        >
+          <mat-option *ngFor="let topic of topics" [value]="topic.id"
+            >{{ topic.name }}
+          </mat-option>
+        </mat-select>
+      </div>
+
+      <div class="title-block">
+        <input
+          matInput
+          [type]="'text'"
+          formControlName="title"
+          placeholder="Titre de l'article"
+        />
+      </div>
+
+      <div class="text-block">
+        <textarea
+          matInput
+          formControlName="content"
+          placeholder="Contenu de l'article"
+        ></textarea>
+      </div>
+
+      <div class="button-block">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Créer
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
