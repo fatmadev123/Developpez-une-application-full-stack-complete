@@ -1,0 +1,25 @@
+<app-navbar-header></app-navbar-header>
+
+<div class="topic-cards">
+  <div class="topic" *ngFor="let topic of topics">
+    <div>
+      <mat-card>
+        <mat-card-title>{{ topic.name }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ topic.description }}</p>
+        </mat-card-content>
+        <div class="topic-follow-button">
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+            [disabled]="isAlreadyFollowed(topic.id)"
+            (click)="follow(topic.id)"
+          >
+            S'abonner
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
