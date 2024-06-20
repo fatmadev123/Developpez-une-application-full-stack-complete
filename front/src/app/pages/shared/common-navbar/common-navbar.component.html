@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <img src="../../../assets/logo_p6.png" />
+  <div class="bar-link-block">
+    <a
+      mat-button
+      routerLink="/post"
+      [ngStyle]="{ color: onPosts === true ? '#7550EC' : 'black' }"
+      >Articles</a
+    >
+    <a
+      mat-button
+      routerLink="/topic"
+      [ngStyle]="{ color: onTopics === true ? '#7550EC' : 'black' }"
+      >Thèmes</a
+    >
+
+    <a mat-button routerLink="/user">
+      <div
+        class="user-icon"
+        [ngStyle]="{
+          border: onProfile === true ? '2px solid #7550EC' : '2px solid black'
+        }"
+      >
+        <fa-icon [icon]="faUserIcon"></fa-icon>
+      </div>
+    </a>
+  </div>
+</mat-toolbar>

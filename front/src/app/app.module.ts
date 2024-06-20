@@ -29,6 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NavbarHeaderComponent } from './pages/shared/navbar-header/navbar-header.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { CommonNavbarComponent } from './pages/shared/common-navbar/common-navbar.component';
+import { MobileNavbarComponent } from './pages/shared/mobile-navbar/mobile-navbar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     LoginNavbarComponent,
     BackArrowLinkComponent,
     NavbarHeaderComponent,
+    CommonNavbarComponent,
+    MobileNavbarComponent,
   ],
   imports: [
     BrowserModule,
