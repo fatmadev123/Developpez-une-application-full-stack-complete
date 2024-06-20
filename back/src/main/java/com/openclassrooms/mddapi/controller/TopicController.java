@@ -40,7 +40,7 @@ public class TopicController {
         List<Topic> topics = this.topicService.getFollowedTopics();
         return ResponseEntity.ok().body(this.topicMapper.toDto(topics));
     }
-    
+
     /**
      * Action to make the user follow the topic
      * @param id: topic id

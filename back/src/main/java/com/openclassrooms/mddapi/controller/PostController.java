@@ -35,6 +35,7 @@ public class PostController {
         List<Post> posts = this.postService.getFeedPosts();
         return ResponseEntity.ok().body(this.postMapper.toDto(posts));
     }
+
     /**
      * Action to get a post by id
      * @param id: post id
