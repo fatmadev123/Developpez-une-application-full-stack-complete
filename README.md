@@ -15,7 +15,7 @@ MDD is a social network when users can post articles about software development,
 - create a database `CREATE DATABASE mddapi;`,
 - import and excute the SQL scripts `mdd.sql` and `mdd-samples.sql` in the project directory : \Developpez-une-application-full-stack-complete\back\src\main\resources\ .
 
-## Front
+## Front-end
 
 ### Technologies
 
@@ -35,19 +35,19 @@ Run `npm install` to install all the dependencies.
 
 ### Run
 
-To run the app in dev mode, execute `npm run start`.
+To run the app, execute `npm run start`.
 
 In a browser go to `http://localhost:4200` to use the app (IMPORTANT: start the back-end before !).
 
 ### Use
 
-Begin by register yourself on the app and log in.
+Begin by register yourself on the app and login.
 
 Some topics are already available for subscribing in at `http://localhost:4200/topics`.
 
 Go to `http://localhost:4200/posts`, you can now publish an article selecting a topic.
 
-## Back
+## Back-end
 
 ### Technologies
 
